@@ -15,7 +15,7 @@ The purpose of this project is to allow code editing/deleting/uploading on share
 * Must upload php script to begin with
 
 ## Installation
-Upload the editor.php file (in the dist/ directory) to the root of your web space then point your browser to http://yoursite.com/editor.php and login to edit files.
+Upload the editor.php file (in the dist/ directory) to the root of your web space then point your browser to http://yoursite.com/editor.php and login to edit files. Default password is 'admin'.
 
 ### Install - via SSH
 ```
