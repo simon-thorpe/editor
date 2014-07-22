@@ -1,5 +1,5 @@
-editor
-======
+editor.php
+==========
 
 This project is a single PHP file that can be uploaded to a webserver. It will then allow browsing and editing of files using an HTML5 editor (no browser plugins required).
 
