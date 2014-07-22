@@ -1,0 +1,5 @@
+Common shell commands:
+du -hd1|sort -h
+fdupes -rq .
+ps -eo pcpu,time,pid,args|tail -n +2|sort -nrk1
+iotop -obn1

@@ -1,0 +1,61 @@
+body{font-family:sans-serif;font-size:11px;margin:0;}
+a{text-decoration:none;}
+input[type="text"]{border:1px solid #444;}
+
+header nav a{float:left;padding:6px 7px;color:#444;}
+header nav a:hover{background-color:#aaa;}
+header nav:after{content:"";clear:both;display:table;}
+header nav .active{font-weight:bold;}
+
+form{display:none;border-top:1px solid #444;padding:10px;}
+form .fieldRow{margin-bottom:5px;}
+pre{margin:-11px 0 0 0;}
+input[readonly]{background-color:#ddd;opacity:0.3;}
+
+#list{border-bottom:1px solid #444;font-weight:bold;}
+#list>div{width:100%;border-top:1px solid #444;display:table;}
+#list>div>*{display:table-cell;padding:2px 0 2px 3px;}
+#list>div>a .indent{margin-left:10px;}
+#list>div.bad{text-decoration:line-through;}
+#list .cut{width:16px;min-width:16px;background-size:100%;background-position:50% 50%;background-repeat:no-repeat;background-color:#fff;background-image:url('//cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/cut.png');}
+#list .copy{width:16px;min-width:16px;background-size:100%;background-position:50% 50%;background-repeat:no-repeat;background-color:#fff;background-image:url('//cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/page_copy.png');}
+#list .paste{width:16px;min-width:16px;background-size:100%;background-position:50% 50%;background-repeat:no-repeat;background-color:#fff;background-image:url('//cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/page_paste.png');}
+#list .dir .paste{display:none;}
+#list .remove-clip{width:16px;min-width:16px;background-size:100%;background-position:50% 50%;background-repeat:no-repeat;background-color:#fff;background-image:url('//cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/delete.png');}
+#list .del{width:16px;min-width:16px;background-size:100%;background-position:50% 50%;background-repeat:no-repeat;background-color:#fff;background-image:url('//cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/delete.png');}
+#list .del:not([onclick]){display:none;}
+#list .direct{width:16px;min-width:16px;background-size:100%;background-position:50% 50%;background-repeat:no-repeat;background-color:#fff;background-image:url('//cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/world_go.png');}
+#list .direct[href=""]{display:none;}
+#list .dl{width:16px;min-width:16px;background-size:100%;background-position:50% 50%;background-repeat:no-repeat;background-color:#fff;background-image:url('//cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/inbox_download.png');}
+#list>div:nth-of-type(odd){background-color:#dfd;}
+#list>div:hover{background-color:#ddd;}
+#list>div:nth-of-type(odd):hover{background-color:#ddd;}
+#list .seg:hover{text-decoration:underline;color:#444 !important;}
+#list .seg[href=""]:hover{text-decoration:none;color:#ccc !important;}
+#list .dir .filepath,#list .dir .seg{color:#bb0;}
+#list .file .filepath,#list .file .seg{color:#1b0;}
+#list .seg[href=""]{color:#ccc;cursor:default;} /* File editing disabled - too large to edit */
+#list .size{color:#bbb;margin-left:5px;font-size:10px;width:100px;}
+#list .dir .size:after{content:" files";}
+#list .age:after{content:" old";}
+#list .age{color:#bbb;font-size:10px;width:100px;}
+
+/*@media (max-width:979px){
+	body{font-size:12px;}
+	#list>div>*{display:block;padding-bottom:0;}
+	#list .size{float:left;height:16px;height:auto;padding:0 0 4px;}
+	#list .age{float:left;height:16px;height:auto;padding:0 0 4px;}
+	#list .direct,#list .dl,#list .del,#list .cut,#list .copy,#list .paste,#list .remove-clip{float:right;height:34px;width:34px;margin-top:-18px;padding:0;}
+	#list .filepath{width:calc(100% - 132px);}
+}*/
+
+@media (max-width:979px){
+	body{font-size:12px;}
+	#list>div>*{display:block;padding-bottom:0;}
+	#list .size{float:left;height:16px;height:auto;padding:0 0 4px;}
+	#list .age{float:left;height:16px;height:auto;padding:0 0 4px;}
+	#list .direct,#list .dl,#list .del,#list .cut,#list .copy,#list .paste,#list .remove-clip{float:right;height:17px;width:17px;padding:0;}
+}
+
+button{border:none;margin:0;font-size:10px;}
+#editor{margin-top:15px;position:absolute;top:0;bottom:0;left:0;right:0;}

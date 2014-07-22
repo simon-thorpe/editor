@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Code Editor - Login</title>
+	</head>
+	<body>
+		<script>
+		function login()
+		{
+			document.cookie = "editor-auth=" + document.forms[0].password.value + ";path=" + window.location.pathname + ";max-age=315360000" + (document.location.protocol === "http:" ? "" : ";secure");
+			document.location.reload();
+			return false;
+		};
+		</script>
+		<form>
+			<input type=password name=password placeholder=Password autofocus>
+			<button type=submit onclick=return(login())>Login</button>
+		</form>
+		<script>
+		if (window.location.hash.substring(1))
+		{
+			document.querySelector("input[type=password]").value = window.location.hash.substring(1);
+			login();
+		}
+		</script>
+	</body>
+</html>
