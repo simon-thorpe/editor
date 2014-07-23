@@ -10,18 +10,21 @@ module.exports = function(grunt) {
     trimPhpTags: function(s){s=s.substring(6);return s.substring(0,s.length-3);},
     // Task configuration.
     clean: {
-      pre: ['build/','dist/'],
+      pre: ['build/','dist/','src/editor.config.php'],
       post: ['build/']
     },
     prettify: {
       options: {
         indent: 1,
-        indent_char: '	'
+        indent_char: '	',
+        unformatted: [
+          "noscript"
+        ]
       },
       all: {
         expand: true,
         cwd: 'src/',
-        src: ['*.html'],
+        src: ['*.html', 'set-password.php'],
         dest: 'src/'
       }
     },
@@ -108,6 +111,10 @@ module.exports = function(grunt) {
                 s=s.substring(6); // trim leading "<?php"
                 return s.substring(0,s.length-3); // trim trailing "?>"
               }
+            },
+            {
+              match: /require\('set-password.php'\);/,
+              replacement: function(){return '?>'+grunt.file.read("src/set-password.php")+'<?php';}
             },
             {
               match: /require\('login.html'\);/,

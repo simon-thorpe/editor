@@ -3,8 +3,8 @@
 # VERSION: @@version
 # BUILT ON: @@buildDate
 # CONFIGURATION:
-# The following global var options are optional (excluding the password). They can optionally be moved to an external config file editor.config.php.
-$PASSWORD=md5('');
+# The following global var options are optional and can be moved to an external config file editor.config.php.
+#$PASSWORD=md5(''); # Uncomment this line to allow login without a password
 $DIRS_AT_TOP=TRUE;
 $SHELL_PRE='';
 $BRANDING_HEADER='';
@@ -18,8 +18,8 @@ if(!isset($SHELL_PRE))$SHELL_PRE='';
 $UNIX=isset($_SERVER["OS"])===false || strpos($_SERVER["OS"],'Windows')===FALSE;
 $WINDOWS=!$UNIX;
 if(!isset($PASSWORD)){
-	header('Content-Type: text/plain');
-	die('Password has not been set!');
+	require('set-password.php');
+	exit;
 }
 if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-auth'])!=$PASSWORD)){
 	require('login.html');

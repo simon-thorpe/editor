@@ -1,10 +1,10 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2014-07-22T02:49:34.666Z
+# BUILT ON: 2014-07-23T23:31:47.724Z
 # CONFIGURATION:
-# The following global var options are optional (excluding the password). They can optionally be moved to an external config file editor.config.php.
-$PASSWORD=md5('admin');
+# The following global var options are optional and can be moved to an external config file editor.config.php.
+#$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
 $DIRS_AT_TOP=TRUE;
 $SHELL_PRE='';
 $BRANDING_HEADER='';
@@ -18,8 +18,62 @@ if(!isset($SHELL_PRE))$SHELL_PRE='';
 $UNIX=isset($_SERVER["OS"])===false || strpos($_SERVER["OS"],'Windows')===FALSE;
 $WINDOWS=!$UNIX;
 if(!isset($PASSWORD)){
-	header('Content-Type: text/plain');
-	die('Password has not been set!');
+	?><!DOCTYPE html>
+<html lang="en" class="set-password">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Code Editor - Set Password</title>
+		<noscript>
+			<?php
+				if(isset($_POST['password'])){
+					file_put_contents('./editor.config.php',"<?php\n\$PASSWORD=md5(".escapeshellarg($_POST['password']).");\n?>");
+					header('Location: '.$_SERVER['SCRIPT_NAME']);
+				}
+			?>
+		</noscript>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+		<style>
+		.set-password body {
+			margin-top: 30px;
+			font-size: 13px;
+		}
+		.set-password .container {
+			max-width: 380px;
+		}
+		</style>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+		$(function()
+		{
+			$('button').click(function()
+			{
+				document.cookie = "editor-auth=" + document.forms[0].password.value + ";path=" + window.location.pathname + ";max-age=315360000" + (document.location.protocol === "http:" ? "" : ";secure");
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<form role="form" method="post">
+				<div class="form-group">
+					<p class="help-block">
+						This is the first time you have logged in and no password has been set. Create a new password below.
+					</p>
+					<label for="exampleInputPassword1">New password</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" autofocus required>
+				</div>
+				<!--
+				<div class="form-group">
+					<label for="exampleInputPassword1">Confirm password</label>
+					<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password" name="passwordConfirm" required>
+				</div>
+				-->
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</body>
+</html><?php
+	exit;
 }
 if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-auth'])!=$PASSWORD)){
 	?><!DOCTYPE html>
