@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2014-07-31T04:37:10.976Z
+# BUILT ON: 2014-07-31T08:40:31.947Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -110,7 +110,7 @@ if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-au
 	</head>
 	<body>
 		<div class="container">
-			<form role="form" method="post" class="form-inline">
+			<form role="form" method="get" class="form-inline">
 				<div class="form-group">
 					<input type="password" class="form-control" id="password" placeholder="Password" name="password" autofocus required>
 				</div>
