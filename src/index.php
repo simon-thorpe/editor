@@ -114,7 +114,7 @@ if($Title=='')$Title='Code Editor';
 	<title><?php echo $Title;?></title>
 	<link rel="stylesheet" href="editor.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="//cdn.jsdelivr.net/ace/1.1.4/min/ace.js"></script>
+	<script src="//cdn.jsdelivr.net/ace/1.1.5/min/ace.js"></script>
 	<script src="//cdn.jsdelivr.net/garlic.js/1.2.2/garlic.min.js"></script>
 </head>
 <body>
