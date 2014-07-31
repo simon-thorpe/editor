@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2014-07-31T08:40:31.947Z
+# BUILT ON: 2014-07-31T08:44:12.867Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -447,7 +447,10 @@ iotop -obn1</pre>
 			$delOnclick="onclick=\""."if(editor.del('$PathEscaped',null)===true){window.location=$('#list>.dir:first a:first').attr('href');}return(false)\"";
 			if(get_dir_count($PATH)>0)
 				$delOnclick='';
-			$html.="<div class=dir><a href=\"?p=" . urlencodelite(substr($PATH,0, strrpos($PATH,'/'))) . "\">..</a><a href=\"javascript:editor.cut('$PathEscaped')\" class=cut></a><a href=\"javascript:editor.copy('$PathEscaped')\" class=copy></a><a href=# $delOnclick class=del></a></div>";
+			$up=substr($PATH,0, strrpos($PATH,'/'));
+			if($up==='')
+				$up='/';
+			$html.="<div class=dir><a href=\"?p=" . urlencodelite($up) . "\">..</a><a href=\"javascript:editor.cut('$PathEscaped')\" class=cut></a><a href=\"javascript:editor.copy('$PathEscaped')\" class=copy></a><a href=# $delOnclick class=del></a></div>";
 		}
 		foreach($files as $filePath)
 		{

@@ -208,7 +208,10 @@ if($Title=='')$Title='Code Editor';
 			$delOnclick="onclick=\""."if(editor.del('$PathEscaped',null)===true){window.location=$('#list>.dir:first a:first').attr('href');}return(false)\"";
 			if(get_dir_count($PATH)>0)
 				$delOnclick='';
-			$html.="<div class=dir><a href=\"?p=" . urlencodelite(substr($PATH,0, strrpos($PATH,'/'))) . "\">..</a><a href=\"javascript:editor.cut('$PathEscaped')\" class=cut></a><a href=\"javascript:editor.copy('$PathEscaped')\" class=copy></a><a href=# $delOnclick class=del></a></div>";
+			$up=substr($PATH,0, strrpos($PATH,'/'));
+			if($up==='')
+				$up='/';
+			$html.="<div class=dir><a href=\"?p=" . urlencodelite($up) . "\">..</a><a href=\"javascript:editor.cut('$PathEscaped')\" class=cut></a><a href=\"javascript:editor.copy('$PathEscaped')\" class=copy></a><a href=# $delOnclick class=del></a></div>";
 		}
 		foreach($files as $filePath)
 		{
