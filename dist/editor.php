@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2014-07-23T23:31:47.724Z
+# BUILT ON: 2014-07-31T04:32:23.939Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -77,30 +77,46 @@ if(!isset($PASSWORD)){
 }
 if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-auth'])!=$PASSWORD)){
 	?><!DOCTYPE html>
-<html>
+<html lang="en" class="login">
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>Code Editor - Login</title>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+		<style>
+		.login body {
+			margin-top: 30px;
+			font-size: 13px;
+		}
+		.login .container {
+			max-width: 380px;
+		}
+		</style>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+		$(function()
+		{
+			$('button').click(function()
+			{
+				document.cookie = "editor-auth=" + document.forms[0].password.value + ";path=" + window.location.pathname + ";max-age=315360000" + (document.location.protocol === "http:" ? "" : ";secure");
+			});
+			if (window.location.hash.substring(1))
+			{
+				$("input[type=password]").val(window.location.hash.substring(1));
+				window.location.hash = ''; // Don't retry if password wrong
+				$('button').get(0).click();
+			}
+		});
+		</script>
 	</head>
 	<body>
-		<script>
-		function login()
-		{
-			document.cookie = "editor-auth=" + document.forms[0].password.value + ";path=" + window.location.pathname + ";max-age=315360000" + (document.location.protocol === "http:" ? "" : ";secure");
-			document.location.reload();
-			return false;
-		};
-		</script>
-		<form>
-			<input type=password name=password placeholder=Password autofocus>
-			<button type=submit onclick=return(login())>Login</button>
-		</form>
-		<script>
-		if (window.location.hash.substring(1))
-		{
-			document.querySelector("input[type=password]").value = window.location.hash.substring(1);
-			login();
-		}
-		</script>
+		<div class="container">
+			<form role="form" method="post" class="form-inline">
+				<div class="form-group">
+					<input type="password" class="form-control" id="password" placeholder="Password" name="password" autofocus required>
+				</div>
+				<button type="submit" class="btn btn-default">Login</button>
+			</form>
+		</div>
 	</body>
 </html><?php
 	exit;
