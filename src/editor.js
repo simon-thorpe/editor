@@ -454,6 +454,12 @@
         return false;
       });
     });
+    $('#list .dir a[class!="seg"], #list .file a[class!="seg"]').click(function(e) {
+      e.stopPropagation();
+    });
+    $('#list .dir, #list .file').click(function() {
+      $(this).find('a.seg').get(0).click();
+    });
     var buildShellHistoryDataList = function() {
       var datalist = $('#shellHistory'),
         shellHistory = JSON.parse(localStorage.shellHistory || '[]'),

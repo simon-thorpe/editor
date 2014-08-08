@@ -32,6 +32,8 @@ input[readonly]{background-color:#ddd;opacity:0.3;}
 #list>div:nth-of-type(odd):hover{background-color:#ddd;}
 #list .seg:hover{text-decoration:underline;color:#444 !important;}
 #list .seg[href=""]:hover{text-decoration:none;color:#ccc !important;}
+#list .dir{cursor:pointer;}
+#list .file{cursor:pointer;}
 #list .dir .filepath,#list .dir .seg{color:#bb0;}
 #list .file .filepath,#list .file .seg{color:#1b0;}
 #list .seg[href=""]{color:#ccc;cursor:default;} /* File editing disabled - too large to edit */
