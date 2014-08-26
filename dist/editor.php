@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2014-08-08T00:09:09.075Z
+# BUILT ON: 2014-08-26T01:43:25.933Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -26,7 +26,7 @@ if(!isset($PASSWORD)){
 		<noscript>
 			<?php
 				if(isset($_POST['password'])){
-					file_put_contents('./editor.config.php',"<?php\n\$PASSWORD=md5(".escapeshellarg($_POST['password']).");\n?>");
+					file_put_contents('./editor.config.php',"<?php\n\$PASSWORD=md5(".escapeshellarg($_POST['password']).");\n?>",FILE_APPEND);
 					header('Location: '.$_SERVER['SCRIPT_NAME']);
 				}
 			?>

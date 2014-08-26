@@ -6,7 +6,7 @@
 		<noscript>
 			<?php
 				if(isset($_POST['password'])){
-					file_put_contents('./editor.config.php',"<?php\n\$PASSWORD=md5(".escapeshellarg($_POST['password']).");\n?>");
+					file_put_contents('./editor.config.php',"<?php\n\$PASSWORD=md5(".escapeshellarg($_POST['password']).");\n?>",FILE_APPEND);
 					header('Location: '.$_SERVER['SCRIPT_NAME']);
 				}
 			?>
