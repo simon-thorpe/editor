@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2014-08-26T01:43:25.933Z
+# BUILT ON: 2014-08-27T23:03:10.300Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -9,6 +9,7 @@ $DIRS_AT_TOP=TRUE;
 $SHELL_PRE='';
 $BRANDING_HEADER='';
 $BRANDING_FOOTER='';
+$DEFAULT_DIR='';
 ?>
 <?php
 if(file_exists('editor.config.php'))require('editor.config.php');
@@ -203,7 +204,7 @@ function urlencodelite($s){
 	return $s;
 }
 $PATH=isset($_REQUEST["p"])?$_REQUEST["p"]:'';
-if($PATH==='' && $_SERVER['REQUEST_METHOD']==='GET'){header('Location: ?p='.urlencodelite(realpath('.')));exit;}
+if($PATH==='' && $_SERVER['REQUEST_METHOD']==='GET'){if(!$DEFAULT_DIR)$DEFAULT_DIR=realpath('.');header('Location: ?p='.urlencodelite($DEFAULT_DIR));exit;}
 
 header('Cache-Control: no-store'); // To disable caching on browser back button.
 

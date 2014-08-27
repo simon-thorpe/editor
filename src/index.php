@@ -9,6 +9,7 @@ $DIRS_AT_TOP=TRUE;
 $SHELL_PRE='';
 $BRANDING_HEADER='';
 $BRANDING_FOOTER='';
+$DEFAULT_DIR='';
 ?>
 <?php
 if(file_exists('editor.config.php'))require('editor.config.php');
@@ -29,7 +30,7 @@ if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-au
 // @@js
 require('util.php');
 $PATH=isset($_REQUEST["p"])?$_REQUEST["p"]:'';
-if($PATH==='' && $_SERVER['REQUEST_METHOD']==='GET'){header('Location: ?p='.urlencodelite(realpath('.')));exit;}
+if($PATH==='' && $_SERVER['REQUEST_METHOD']==='GET'){if(!$DEFAULT_DIR)$DEFAULT_DIR=realpath('.');header('Location: ?p='.urlencodelite($DEFAULT_DIR));exit;}
 
 header('Cache-Control: no-store'); // To disable caching on browser back button.
 
