@@ -9,7 +9,7 @@ header nav .active{font-weight:bold;}
 
 form{display:none;border-top:1px solid #444;padding:10px;}
 form .fieldRow{margin-bottom:5px;}
-pre{margin:-11px 0 0 0;}
+pre{margin:0 0 10px;}
 input[readonly]{background-color:#ddd;opacity:0.3;}
 
 #list{border-bottom:1px solid #444;font-weight:bold;}

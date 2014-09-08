@@ -137,9 +137,6 @@ if($Title=='')$Title='Code Editor';
 		<button onclick="return(false)">Search</button>
 	</form>
 	<form class="shellForm" data-persist=garlic data-destroy=false method=post <?php if(isset($_POST['shell']))echo 'style=display:block';?>>
-		<input type="text" placeholder="Shell command" style="width:100%;" list=shellHistory name=shell <?php if(isset($_POST['shell']))echo 'autofocus';?>>
-		<div style=margin-top:6px><input type=checkbox id=shellFormBackground><label for=shellFormBackground>Background</label></div>
-		<button style="margin-top:6px;height:0;opacity:0;" type=submit>Run</button>
 		<?php if(isset($_POST['shell'])){ ?>
 			<?php if($WINDOWS){ ?>
 				<pre id=shellOutput><?php system('cd '.escapeshellarg($PATH)." && ".$_POST['shell'],$errorCode); ?></pre>
@@ -150,6 +147,9 @@ if($Title=='')$Title='Code Editor';
 		<?php }else{ ?>
 		<pre id=shellOutput><?php require('shell-motd.txt'); ?></pre>
 		<?php } ?>
+		<input type="text" placeholder="Shell command" style="width:100%;" list=shellHistory name=shell <?php if(isset($_POST['shell']))echo 'autofocus';?>>
+		<div style=margin-top:6px><input type=checkbox id=shellFormBackground><label for=shellFormBackground>Background</label></div>
+		<button style="height:0;opacity:0;" type=submit>Run</button>
 	</form>
 </header>
 <?php
