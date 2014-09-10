@@ -470,5 +470,26 @@
       }
     };
     buildShellHistoryDataList();
+
+    $('#list').dropzone({
+      url: '?p=' + Path,
+      clickable: false,
+      previewsContainer: 'body',
+      totaluploadprogress: function(p) {
+        if (p === 100) {
+          window.location = window.location;
+        }
+      }
+    });
+    $('.uploadButton').dropzone({
+      url: '?p=' + Path,
+      clickable: true,
+      previewsContainer: 'body',
+      totaluploadprogress: function(p) {
+        if (p === 100) {
+          window.location = window.location;
+        }
+      }
+    });
   });
 })(jQuery);

@@ -61,4 +61,11 @@ elseif(isset($_GET["d"])){
 	readfile($PATH);
 	exit;
 }
+elseif(isset($_FILES['file'])){
+	$dest=$PATH.'/'.$_FILES['file']['name'];
+	$tempFile=$_FILES['file']['tmp_name'];
+	header('Content-Type: application/json');
+	echo json_encode(array("success"=>move_uploaded_file($_FILES['file']['tmp_name'],$dest)===true));
+	exit;
+}
 ?>

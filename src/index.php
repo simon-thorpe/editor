@@ -117,6 +117,7 @@ if($Title=='')$Title='Code Editor';
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="//cdn.jsdelivr.net/ace/1.1.5/min/ace.js"></script>
 	<script src="//cdn.jsdelivr.net/garlic.js/1.2.2/garlic.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/dropzone/3.8.4/dropzone.min.js"></script>
 </head>
 <body>
 <header class="list">
@@ -124,6 +125,7 @@ if($Title=='')$Title='Code Editor';
 	<nav>
 		<a href="javascript:void(0)" class="newButton">new</a>
 		<a href="javascript:void(0)" class="searchButton">search</a>
+		<a href="javascript:void(0)" class="uploadButton">upload</a>
 		<a href="?p=<?php echo urlencodelite($PATH);?><?php echo $Recursive?'':'&r=';?>" class="<?php echo $Recursive?'active':'';?>">tree</a>
 		<?php if($ALLOW_SHELL){ ?><a href="javascript:void(0)" class="shellButton <?php if(isset($_POST['shell']))echo 'active';?>">shell</a><?php } ?>
 		<datalist id=shellHistory></datalist>
