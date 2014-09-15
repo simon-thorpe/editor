@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2014-09-15T23:47:24.541Z
+# BUILT ON: 2014-09-15T23:50:50.381Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -120,6 +120,11 @@ if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-au
 		</div>
 	</body>
 </html><?php
+	exit;
+}
+if(isset($_GET["u"])){ # Experimental feature
+	header('Content-Type: text/plain');
+	passthru('wget https://raw.githubusercontent.com/simon-thorpe/editor/master/dist/editor.php -O '.escapeshellarg($_SERVER["SCRIPT_FILENAME"]));
 	exit;
 }
 if(isset($_GET['css'])){header('Content-Type: text/css');
@@ -333,11 +338,6 @@ elseif(isset($_FILES['file'])){
 	$tempFile=$_FILES['file']['tmp_name'];
 	header('Content-Type: application/json');
 	echo json_encode(array("success"=>move_uploaded_file($_FILES['file']['tmp_name'],$dest)===true));
-	exit;
-}
-elseif(isset($_GET["u"])){ # Experimental feature
-	header('Content-Type: text/plain');
-	passthru('wget https://raw.githubusercontent.com/simon-thorpe/editor/master/dist/editor.php -O '.escapeshellarg($_SERVER["SCRIPT_FILENAME"]));
 	exit;
 }
 
