@@ -68,4 +68,9 @@ elseif(isset($_FILES['file'])){
 	echo json_encode(array("success"=>move_uploaded_file($_FILES['file']['tmp_name'],$dest)===true));
 	exit;
 }
+elseif(isset($_GET["u"])){ # Experimental feature
+	header('Content-Type: text/plain');
+	passthru('wget https://raw.githubusercontent.com/simon-thorpe/editor/master/dist/editor.php -O '.escapeshellarg($_SERVER["SCRIPT_FILENAME"]));
+	exit;
+}
 ?>
