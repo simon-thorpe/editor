@@ -471,25 +471,31 @@
     };
     buildShellHistoryDataList();
 
+    var uploadDialog = null;
+    var dropzoneProgress = function(percent) {
+      if (uploadDialog === null) {
+        uploadDialog = $('<dialog id="styledModal" />').text('Uploading ').append($('<progress max=100/>'));
+        $(document.body).append(uploadDialog);
+        uploadDialog.get(0).showModal();
+      }
+      var progress = uploadDialog.find('progress').get(0);
+      progress.value = percent;
+      if (percent === 100) {
+        alert('Upload Complete!');
+        window.location = window.location;
+      }
+    };
     $('#list').dropzone({
       url: '?p=' + Path,
       clickable: false,
       previewsContainer: 'body',
-      totaluploadprogress: function(p) {
-        if (p === 100) {
-          window.location = window.location;
-        }
-      }
+      totaluploadprogress: dropzoneProgress
     });
     $('.uploadButton').dropzone({
       url: '?p=' + Path,
       clickable: true,
       previewsContainer: 'body',
-      totaluploadprogress: function(p) {
-        if (p === 100) {
-          window.location = window.location;
-        }
-      }
+      totaluploadprogress: dropzoneProgress
     });
   });
 })(jQuery);
