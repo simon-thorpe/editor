@@ -28,7 +28,7 @@ if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-au
 }
 if(isset($_GET["u"])){ # Experimental feature
 	header('Content-Type: text/plain');
-	passthru('wget https://raw.githubusercontent.com/simon-thorpe/editor/master/dist/editor.php -O '.escapeshellarg($_SERVER["SCRIPT_FILENAME"]));
+	passthru('wget https://raw.githubusercontent.com/simon-thorpe/editor/master/dist/editor.php -O '.escapeshellarg($_SERVER["SCRIPT_FILENAME"]).' 2>&1');
 	exit;
 }
 // @@css
