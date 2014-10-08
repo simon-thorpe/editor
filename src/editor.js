@@ -378,11 +378,11 @@
     });
     $('.searchButton').click(function() {
       $(this).addClass('active');
-      $('.searchForm').show().find('input').select();
+      $('.searchForm').show().find('input[type=text]:first').select();
     });
     $('.shellButton').click(function() {
       $(this).addClass('active');
-      var input = $('.shellForm').show().find('input').select(),
+      var input = $('.shellForm').show().find('input[type=text]:first').select(),
         first = true,
         continuingLastSession = false,
         blinkOn = true,
