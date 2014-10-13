@@ -14,6 +14,11 @@
   }
   window.editor = editor;
   editor.detectFileMode = function(filePath) {
+    if (/^\/etc\/apache2\//.test(filePath)) {
+      return 'apache_conf';
+    } else if (/Dockerfile$/.test(filePath)) {
+      return 'dockerfile';
+    }
     var ext = filePath.substring(filePath.lastIndexOf('.') + 1);
     // https://github.com/ajaxorg/ace/tree/master/lib/ace/mode
     switch (ext) {
@@ -79,6 +84,8 @@
         return 'sql';
       case 'svg':
         return 'svg';
+      case 'md':
+        return 'markdown';
       default:
         return '';
     }
