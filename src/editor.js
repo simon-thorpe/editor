@@ -439,7 +439,7 @@
                 });
                 alert('Last command had no result.');
               }
-
+              window.onbeforeunload = null;
               input.prop('readonly', false).select();
             }
           }
@@ -450,6 +450,12 @@
         var shellHistory = JSON.parse(localStorage.shellHistory || '[]');
         shellHistory.push(input.val());
         localStorage.shellHistory = JSON.stringify(shellHistory);
+
+        setTimeout(function() {
+          window.onbeforeunload = function() {
+            return 'You have a shell command running.';
+          };
+        }, 500);
 
         if (!$('.shellForm input#shellFormBackground').prop('checked')) {
           return true; // Normal form submit.
