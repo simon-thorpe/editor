@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2014-12-17T23:47:19.017Z
+# BUILT ON: 2014-12-17T23:56:32.176Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -32,7 +32,7 @@ if(!isset($PASSWORD)){
 				}
 			?>
 		</noscript>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.1/css/bootstrap.min.css">
 		<style>
 		.set-password body {
 			margin-top: 30px;
@@ -82,7 +82,7 @@ if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-au
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>Code Editor - Login</title>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.1/css/bootstrap.min.css">
 		<style>
 		.login body {
 			margin-top: 30px;
@@ -364,7 +364,7 @@ if($Title=='')$Title='Code Editor';
 	<title><?php echo $Title;?></title>
 	<link rel="stylesheet" href="?css=0.0.1">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="//cdn.jsdelivr.net/ace/1.1.5/min/ace.js"></script>
+	<script src="//cdn.jsdelivr.net/ace/1.1.8/min/ace.js"></script>
 	<script src="//cdn.jsdelivr.net/garlic.js/1.2.2/garlic.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/dropzone/3.8.4/dropzone.min.js"></script>
 </head>

@@ -11,7 +11,7 @@
 				}
 			?>
 		</noscript>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.1/css/bootstrap.min.css">
 		<style>
 		.set-password body {
 			margin-top: 30px;
