@@ -1,6 +1,3 @@
-editor.php
-==========
-
 This project is a single PHP file that can be uploaded to a webserver. It will then allow browsing and editing of files using an HTML5 editor (no browser plugins required).
 
 The purpose of this project is to allow code editing/deleting/uploading on shared web space where FTP or other means of editing is unavailable or not practical (such as a Chromebook).
