@@ -26,7 +26,7 @@ wget https://raw.githubusercontent.com/simon-thorpe/editor/master/dist/editor.ph
 #### Install - via CMS
 Some content management systems allow creating simple text files. All you need to do is create a file editor.php (or any name you like) then paste the contents of dist/editor.php into that file.
 
-# Building from Source
+## Building from Source
 ```
 git clone https://github.com/simon-thorpe/editor.git
 cd editor
@@ -34,4 +34,10 @@ npm install
 # edit dev files in src dir
 grunt
 # built file is in dist dir
+```
+
+## API
+Uploading a file to the server
+```
+curl yoursite.com/editor.php -s -H "Cookie: editor-auth=yourpass" -F p=/home/yoursite/public_html/calendar.json -F 'content=<calendar.json'
 ```
