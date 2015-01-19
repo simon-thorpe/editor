@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2014-12-17T23:56:32.176Z
+# BUILT ON: 2015-01-19T21:43:03.496Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -99,7 +99,7 @@ if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-au
 			$('button').click(function()
 			{
 				document.cookie = "editor-auth=" + document.forms[0].password.value + ";path=" + window.location.pathname + ";max-age=315360000" + (document.location.protocol === "http:" ? "" : ";secure");
-				window.location = window.location;
+				window.location = window.location.origin + window.location.pathname + window.location.search;
 				return false;
 			});
 			if (window.location.hash.substring(1))

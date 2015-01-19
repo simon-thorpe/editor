@@ -20,7 +20,7 @@
 			$('button').click(function()
 			{
 				document.cookie = "editor-auth=" + document.forms[0].password.value + ";path=" + window.location.pathname + ";max-age=315360000" + (document.location.protocol === "http:" ? "" : ";secure");
-				window.location = window.location;
+				window.location = window.location.origin + window.location.pathname + window.location.search;
 				return false;
 			});
 			if (window.location.hash.substring(1))
