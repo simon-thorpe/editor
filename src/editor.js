@@ -29,6 +29,7 @@
       case 'json':
         return 'json';
       case 'asax':
+      case 'ashx':
       case 'cs':
         return 'csharp';
       case 'xml':
