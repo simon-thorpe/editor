@@ -7,8 +7,7 @@
       Path = RegExp.$1;
     }
     Path = decodeURIComponent(Path);
-  }
-  catch (e) {
+  } catch (e) {
     alert(e);
     alert('Path=' + Path);
   }
@@ -144,7 +143,7 @@
       var path = o,
         item,
         items = editor.clip.getItems();
-      if (typeof(path) === 'object') {
+      if (typeof (path) === 'object') {
         path = o.path;
       }
       item = items.filter(function(x) {
@@ -205,7 +204,7 @@
       return x.path === clipItemPath;
     })[0];
     pasteAs = prompt(
-    item.type === 'copy' ? 'Copy to:' : 'Move to:', item.path.substring(1 + item.path.lastIndexOf('/')));
+      item.type === 'copy' ? 'Copy to:' : 'Move to:', item.path.substring(1 + item.path.lastIndexOf('/')));
     if (!pasteAs) {
       return;
     }
@@ -265,12 +264,12 @@
         }
       });
       if (mode) {
-        if (typeof(console) !== 'undefined') {
+        if (typeof (console) !== 'undefined') {
           console.log('Setting editor mode: ' + 'ace/mode/' + mode);
         }
         editor.instance.getSession().setMode('ace/mode/' + mode);
       } else {
-        if (typeof(console) !== 'undefined') {
+        if (typeof (console) !== 'undefined') {
           console.log('Unsupported editor mode. All available modes here: https://github.com/ajaxorg/ace-builds/tree/master/src-noconflict');
         }
       }
@@ -396,7 +395,7 @@
         blinkOn = true,
         callNext;
       callNext = function(cmd) {
-        if (typeof(cmd) === 'undefined') {
+        if (typeof (cmd) === 'undefined') {
           cmd = null;
         }
         $.ajax({

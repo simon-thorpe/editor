@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2015-03-09T23:29:33.446Z
+# BUILT ON: 2015-05-06T00:39:09.006Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
