@@ -122,7 +122,7 @@ if($Title=='')$Title='Code Editor';
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdn.jsdelivr.net/ace/1.1.9/min/ace.js"></script>
 	<script src="//cdn.jsdelivr.net/garlic.js/1.2.2/garlic.min.js"></script>
-	<script src="//cdn.jsdelivr.net/dropzone/3.12.0/dropzone.min.js"></script>
+	<script src="//cdn.jsdelivr.net/dropzone/4.0.1/dropzone.min.js"></script>
 </head>
 <body>
 <header class="list">
