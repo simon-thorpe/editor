@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2015-05-06T00:39:09.006Z
+# BUILT ON: 2015-05-06T00:40:41.188Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -364,7 +364,7 @@ if($Title=='')$Title='Code Editor';
 	<title><?php echo $Title;?></title>
 	<link rel="stylesheet" href="?css=0.0.1">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdn.jsdelivr.net/ace/1.1.8/min/ace.js"></script>
+	<script src="//cdn.jsdelivr.net/ace/1.1.9/min/ace.js"></script>
 	<script src="//cdn.jsdelivr.net/garlic.js/1.2.2/garlic.min.js"></script>
 	<script src="//cdn.jsdelivr.net/dropzone/3.12.0/dropzone.min.js"></script>
 </head>
