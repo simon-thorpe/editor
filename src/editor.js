@@ -501,7 +501,7 @@
         window.location = window.location;
       }
     };
-    $('#list').dropzone({
+    $(document.body).dropzone({
       url: '?p=' + Path,
       clickable: false,
       previewsContainer: 'body',
