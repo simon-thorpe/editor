@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2015-06-22T00:33:19.995Z
+# BUILT ON: 2015-06-22T00:38:31.533Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -42,7 +42,7 @@ if(!isset($PASSWORD)){
 			max-width: 380px;
 		}
 		</style>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>
 		$(function()
 		{
@@ -92,7 +92,7 @@ if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-au
 			max-width: 380px;
 		}
 		</style>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>
 		$(function()
 		{
@@ -363,7 +363,7 @@ if($Title=='')$Title='Code Editor';
 	<link rel="shortcut icon" href="//cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/file_manager.png">
 	<title><?php echo $Title;?></title>
 	<link rel="stylesheet" href="?css=0.0.1">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="//cdn.jsdelivr.net/ace/1.1.9/min/ace.js"></script>
 	<script src="//cdn.jsdelivr.net/garlic.js/1.2.2/garlic.min.js"></script>
 	<script src="//cdn.jsdelivr.net/dropzone/4.0.1/dropzone.min.js"></script>
