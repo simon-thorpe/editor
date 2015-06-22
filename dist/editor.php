@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2015-06-22T00:38:31.533Z
+# BUILT ON: 2015-06-22T00:41:37.092Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -32,7 +32,7 @@ if(!isset($PASSWORD)){
 				}
 			?>
 		</noscript>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.5/css/bootstrap.min.css">
 		<style>
 		.set-password body {
 			margin-top: 30px;
@@ -82,7 +82,7 @@ if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-au
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>Code Editor - Login</title>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.5/css/bootstrap.min.css">
 		<style>
 		.login body {
 			margin-top: 30px;
