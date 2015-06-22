@@ -219,6 +219,8 @@ if($Title=='')$Title='Code Editor';
 			$up=substr($PATH,0, strrpos($PATH,'/'));
 			if($up==='')
 				$up='/';
+			elseif($Recursive)
+				$up=$PATH; # Back out of search/recursive mode instead of up a level.
 			$html.="<div class=dir><a class=seg href=\"?p=" . urlencodelite($up) . "\">..</a><a href=\"javascript:editor.cut('$PathEscaped')\" class=cut></a><a href=\"javascript:editor.copy('$PathEscaped')\" class=copy></a><a href=# $delOnclick class=del></a></div>";
 		}
 		foreach($files as $filePath)

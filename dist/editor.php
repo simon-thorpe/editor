@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2015-05-06T00:44:22.607Z
+# BUILT ON: 2015-06-22T00:33:19.995Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -467,6 +467,8 @@ iotop -obn1</pre>
 			$up=substr($PATH,0, strrpos($PATH,'/'));
 			if($up==='')
 				$up='/';
+			elseif($Recursive)
+				$up=$PATH; # Back out of search/recursive mode instead of up a level.
 			$html.="<div class=dir><a class=seg href=\"?p=" . urlencodelite($up) . "\">..</a><a href=\"javascript:editor.cut('$PathEscaped')\" class=cut></a><a href=\"javascript:editor.copy('$PathEscaped')\" class=copy></a><a href=# $delOnclick class=del></a></div>";
 		}
 		foreach($files as $filePath)
