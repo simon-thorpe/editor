@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2015-06-22T00:41:37.092Z
+# BUILT ON: 2015-07-02T06:34:02.553Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -325,8 +325,10 @@ elseif(isset($_POST["new"])){
 elseif(isset($_GET["d"])){
 	// http://php.net/manual/en/function.readfile.php
 	header('Content-Description: File Transfer');
-	header('Content-Type: application/octet-stream');
-	header('Content-Disposition: attachment; filename='.basename($PATH));
+	$fi=finfo_open(FILEINFO_MIME);
+	header('Content-Type: '.finfo_file($fi,$PATH));
+	finfo_close($fi);
+	header('Content-Disposition: inline; filename='.basename($PATH));
 	header('Content-Transfer-Encoding: binary');
 	header('Cache-Control: private, max-age=0, must-revalidate');
 	header('Content-Length: '.filesize($PATH));
