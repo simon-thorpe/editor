@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["rm"])){
 	header('Content-Type: application/json');
-	if(is_dir($PATH))
+	if(is_dir($PATH)&&!is_link($PATH))
 		echo '{"success":'.(rmdir($PATH)===true?'true':'false').'}';
 	else
 		echo '{"success":'.(unlink($PATH)===true?'true':'false').'}';

@@ -1,7 +1,7 @@
 <?php
 # Code Editor
 # VERSION: 0.0.1
-# BUILT ON: 2015-07-02T06:34:02.553Z
+# BUILT ON: 2015-07-07T05:45:28.364Z
 # CONFIGURATION:
 # The following global var options are optional and can be moved to an external config file editor.config.php.
 #$PASSWORD=md5('admin'); # Uncomment this line to allow login without a password
@@ -275,7 +275,7 @@ if($ALLOW_SHELL && isset($_POST["ajaxShell"])){
 
 if(isset($_POST["rm"])){
 	header('Content-Type: application/json');
-	if(is_dir($PATH))
+	if(is_dir($PATH)&&!is_link($PATH))
 		echo '{"success":'.(rmdir($PATH)===true?'true':'false').'}';
 	else
 		echo '{"success":'.(unlink($PATH)===true?'true':'false').'}';
@@ -464,7 +464,7 @@ iotop -obn1</pre>
 		if ($PATH != ""){
 			$PathEscaped=str_replace("'","\\'",$PATH);
 			$delOnclick="onclick=\""."if(editor.del('$PathEscaped',null)===true){window.location=$('#list>.dir:first a:first').attr('href');}return(false)\"";
-			if(get_dir_count($PATH)>0)
+			if(get_dir_count($PATH)>0&&!is_link($PATH)) # Hide del button if dir not empty and not a symlink.
 				$delOnclick='';
 			$up=substr($PATH,0, strrpos($PATH,'/'));
 			if($up==='')
@@ -514,7 +514,7 @@ iotop -obn1</pre>
 			else
 				$dlAnchor='<a class=dl href="?d=&p='.$aFileEscaped.'"></a>';
 			$delOnclick="onclick=\"editor.del('$aFileEscaped',this);return(false)\"";
-			if($isDir&&$size!==0)$delOnclick='';
+			if($isDir&&$size!==0&&!is_link($aFile))$delOnclick=''; # Hide del button if dir not empty and not a symlink.
 			
 			$segAs='';
 			

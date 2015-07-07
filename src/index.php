@@ -214,7 +214,7 @@ if($Title=='')$Title='Code Editor';
 		if ($PATH != ""){
 			$PathEscaped=str_replace("'","\\'",$PATH);
 			$delOnclick="onclick=\""."if(editor.del('$PathEscaped',null)===true){window.location=$('#list>.dir:first a:first').attr('href');}return(false)\"";
-			if(get_dir_count($PATH)>0)
+			if(get_dir_count($PATH)>0&&!is_link($PATH)) # Hide del button if dir not empty and not a symlink.
 				$delOnclick='';
 			$up=substr($PATH,0, strrpos($PATH,'/'));
 			if($up==='')
@@ -264,7 +264,7 @@ if($Title=='')$Title='Code Editor';
 			else
 				$dlAnchor='<a class=dl href="?d=&p='.$aFileEscaped.'"></a>';
 			$delOnclick="onclick=\"editor.del('$aFileEscaped',this);return(false)\"";
-			if($isDir&&$size!==0)$delOnclick='';
+			if($isDir&&$size!==0&&!is_link($aFile))$delOnclick=''; # Hide del button if dir not empty and not a symlink.
 			
 			$segAs='';
 			
