@@ -334,21 +334,21 @@
     });
     $('.searchForm button').click(function() {
       var select = $('.searchForm select').val(),
-        url = '?p=' + encodeURI(Path);
+        url = '?p=' + encodeURIComponent(Path).replace(/%2F/g, '/');
       if ($('.searchForm input[type=checkbox]').prop('checked')) {
         url += '&r=';
       }
       if (select === 'Filenames' || select === 'All') {
-        url += '&find=' + encodeURI($('.searchForm input[type=text]').val());
+        url += '&find=' + encodeURIComponent($('.searchForm input[type=text]').val()).replace(/%2F/g, '/');
       }
       if (select === 'Content (All Files)' || select === 'All') {
-        url += '&grep=' + encodeURI($('.searchForm input[type=text]').val());
+        url += '&grep=' + encodeURIComponent($('.searchForm input[type=text]').val()).replace(/%2F/g, '/');
       }
       if (select === 'Content (Code Only)') {
-        url += '&find=^[^.]*$|\\.(php|js|json|..?ss|p?html?|as..?|cs|vb|rb|py|txt|md|xml|xslt?|config)$&grep=' + encodeURI($('.searchForm input[type=text]').val());
+        url += '&find=^[^.]*$|\\.(php|js|json|..?ss|p?html?|as..?|cs|vb|rb|py|txt|md|xml|xslt?|config)$&grep=' + encodeURIComponent($('.searchForm input[type=text]').val()).replace(/%2F/g, '/');
       }
       if (select === 'Locate Database') {
-        url += '&locate=' + encodeURI($('.searchForm input[type=text]').val().replace(/[ ]+/g, '.*'));
+        url += '&locate=' + encodeURIComponent($('.searchForm input[type=text]').val().replace(/[ ]+/g, '.*')).replace(/%2F/g, '/');
       }
       window.location = url;
     });
@@ -372,7 +372,7 @@
           dataType: 'json',
           success: function(r) {
             if (r.success === true) {
-              window.location = '?p=' + encodeURI(Path + '/' + v);
+              window.location = '?p=' + encodeURIComponent(Path + '/' + v).replace(/%2F/g, '/');
             } else {
               alert(r.message);
             }
