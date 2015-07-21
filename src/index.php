@@ -279,9 +279,10 @@ if($Title=='')$Title='Code Editor';
 					$href=$direct;
 				else
 					$href='?p='.urlencodelite(($PATH==='/'?'':$PATH).$segAppend);
-				$segAs.=' / <a class=seg href="'.$href.'">'.$segs[$i].'</a>';
+				$segIsDir=$i!==$segsCount-1;
+				$segAs.='<span class=slash> / </span><a class="seg '.($segIsDir?'d':'').'" href="'.$href.'">'.$segs[$i].'</a>';
 			}
-			$segAs=substr($segAs,3); // Trim leading " / "
+			$segAs=substr($segAs,28); // Trim leading " <span class=slash>/</span> "
 			
 			$pasteAnchor='';
 			if($isDir)

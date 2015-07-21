@@ -34,8 +34,10 @@ input[readonly]{background-color:#ddd;opacity:0.3;}
 #list .seg[href=""]:hover{text-decoration:none;color:#ccc !important;}
 #list .dir{cursor:pointer;}
 #list .file{cursor:pointer;}
+#list .filepath .slash{color:#bbb;}
 #list .dir .filepath,#list .dir .seg{color:#bb0;}
 #list .file .filepath,#list .file .seg{color:#1b0;}
+#list .file .seg.d{color:#bb0;}
 #list .seg[href=""]{color:#ccc;cursor:default;} /* File editing disabled - too large to edit */
 #list .size{color:#bbb;margin-left:5px;font-size:10px;width:100px;}
 #list .dir .size:after{content:" files";}
