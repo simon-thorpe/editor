@@ -11,17 +11,18 @@
 				}
 			?>
 		</noscript>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">
 		<style>
 		.set-password body {
 			margin-top: 30px;
 			font-size: 13px;
 		}
+		
 		.set-password .container {
 			max-width: 380px;
 		}
 		</style>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 		<script>
 		$(function()
 		{

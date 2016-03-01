@@ -32,7 +32,8 @@ module.exports = function(grunt) {
       src: 'src/**/*.js',
       options: {
         "preset": "google",
-        "maximumLineLength": 1000
+        "maximumLineLength": 1000,
+        "disallowMultipleVarDecl": false
       }
     },
     esformatter: {
