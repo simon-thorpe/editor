@@ -251,6 +251,7 @@
       editor.instance = ace.edit('editor');
       //editor.instance.setTheme('ace/theme/monokai');
       if ($(this).get(0).hasAttribute('data-readonly')) {
+        document.title += ' [readonly]';
         editor.instance.setOptions({
           readOnly: true,
           highlightActiveLine: false,
