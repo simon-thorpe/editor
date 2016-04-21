@@ -119,7 +119,7 @@ if($Title=='')$Title='Code Editor';
 	<link rel="shortcut icon" href="//cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/file_manager.png">
 	<title><?php echo $Title;?></title>
 	<link rel="stylesheet" href="editor.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 	<script src="//cdn.jsdelivr.net/ace/1.2.3/min/ace.js"></script>
 	<script src="//cdn.jsdelivr.net/garlic.js/1.2.2/garlic.min.js"></script>
 	<script src="//cdn.jsdelivr.net/dropzone/4.3.0/dropzone.min.js"></script>
