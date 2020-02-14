@@ -22,7 +22,7 @@ if(!isset($PASSWORD)){
 	require('set-password.php');
 	exit;
 }
-if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||md5($_COOKIE['editor-auth'])!=$PASSWORD)){
+if($PASSWORD!=md5('')&&(!isset($_COOKIE['editor-auth'])||$_COOKIE['editor-auth']!=$PASSWORD)){
 	require('login.html');
 	exit;
 }
